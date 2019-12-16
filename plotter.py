@@ -35,3 +35,16 @@ def plot_3d_function(
     ax.view_init(30, 0)
     plt.draw()
     plt.pause(10)
+
+
+def plot_rids(x_net, y_net, precise=None, diff=None):
+    plt.figure()
+    plt.subplot(2, 1, 1)
+    plt.plot(x_net, y_net, '-s')
+    if precise is not None:
+        plt.plot(x_net, precise, '-s')
+    if diff is not None:
+        plt.plot(x_net, diff, '-s')
+    plt.legend(["Ридс", "точное", "Конечно-разностный"])
+    plt.grid(True)
+    plt.show()
